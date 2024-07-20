@@ -9,4 +9,6 @@ Step-2: npm i json-server react-router-dom
 
 step-3:npm run dev
 
+(For Adding Context Please Create a Context folder inside src folder)
+
 
