@@ -1,0 +1,148 @@
+{
+  "offers": [
+    {
+      "id": "1",
+      "image": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/YAYPOP.jpg?ver=48.85",
+      "title": "FREE POPCORN (MED) ON A CART VALUE OF 499 OR MORE. FRIDAY ONLY.",
+      "description": "Free Popcorn (Med) on a cart value of 499 or more. Friday only.  "
+    },
+    {
+      "id": "2",
+      "image": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/ADDCHK99.jpg?ver=48.85",
+      "title": "ADD 2 PC HOT N CRISPY CHICKEN AT JUST RS 99 ON MIN CART VALUE OF RS 499 OR MORE. APPLICABLE ON 2ND & 3RD ORDER FOR SIGNED IN USER.",
+      "description": "Add 2 Pc Hot n Crispy Chicken at just Rs 99 on min cart value of Rs 499 or more. Applicable on 2nd & 3rd order for signed in user."
+    },
+    {
+      "id": "3",
+      "image": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/BIGSAVE.jpg?ver=48.85",
+      "title": "UPTO RS 100 OFF ON MIN CART VALUE OF RS 699 OR MORE . APPLICABLE ON 4TH ORDER ONWARDS FOR SIGNED IN USER.",
+      "description": "Upto Rs 100 off on min cart value of Rs 699 or more . Applicable on 4th order onwards for signed in user."
+    },
+    {
+      "id": "4",
+      "image": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/PHP75.jpg?ver=48.85",
+      "title": "GET FLAT RS.75 OFF ON A CART VALUE OF RS.599 OR ABOVE",
+      "description": "Get flat Rs.75 off on a cart value of Rs.599 or above"
+    },
+    {
+      "id": "5",
+      "image": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/YAYPOP.jpg?ver=48.85",
+      "title": "FREE POPCORN (MED) ON A CART VALUE OF 499 OR MORE. FRIDAY ONLY.",
+      "description": "Free Popcorn (Med) on a cart value of 499 or more. Friday only."
+    },
+    {
+      "id": "6",
+      "image": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/YAYCHKN.jpg?ver=48.85",
+      "title": "FREE 1PC CHICKEN ON A CART VALUE OF 499 OR MORE. FRIDAY ONLY.",
+      "description": "Free 1pc Chicken on a cart value of 499 or more. Friday only."
+    },
+    {
+      "id": "7",
+      "image": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/YAYSTRIPS.jpg?ver=48.85",
+      "title": "FREE 3PC STRIPS ON A CART VALUE OF 499 OR MORE. FRIDAY ONLY.",
+      "description": "Free 3pc Strips on a cart value of 499 or more. Friday only."
+    },
+    {
+      "id": "8",
+      "image": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/YAYVZINGER.jpg?ver=48.85",
+      "title": "FREE VEG ZINGER ON A CART VALUE OF 499 OR MORE. FRIDAY ONLY.",
+      "description": "Free Veg Zinger on a cart value of 499 or more. Friday only."
+    },
+    {
+      "id": "9",
+      "image": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/YAYFRIES.jpg?ver=48.85",
+      "title": "FREE FRIES (MED) ON A CART VALUE OF 499 OR MORE. FRIDAY ONLY.",
+      "description": "Free Fries (Med) on a cart value of 499 or more. Friday only. "
+    }
+  ],
+  "internationalBurgerFest": [
+    {
+      "id": "1",
+      "title": "Caribbean Spicy Zinger Burger",
+      "category": "Non veg",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K815.jpg?ver=48.85",
+      "price": "₹219.05",
+      "desc": "Relish the Caribbean spicy zinger"
+    },
+    {
+      "id": "2",
+      "title": "Mexican Zinger Pro Burger",
+      "category": "Non veg",
+      "price": "₹219.05",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K696.jpg?ver=48.85",
+      "desc": "New Zinger Pro burger with 1 Hot & Crispy chicken & Pepsi 475ml at a deal price"
+    },
+    {
+      "id": "3",
+      "title": "Mexican Zinger Pro Burger & Chicken Meal",
+      "category": "Non veg",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002416.jpg?ver=48.85",
+      "price": "₹399.05",
+      "desc": "New Zinger Pro burger with 1 Hot & Crispy chicken & Pepsi 475ml at a deal price"
+    },
+    {
+      "id": "4",
+      "title": "Caribbean Spicy Zinger Burger",
+      "category": "Non veg",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K815.jpg?ver=48.85",
+      "price": "₹219.05",
+      "desc": "Relish the Caribbean spicy zinger"
+    },
+    {
+      "id": "5",
+      "title": "Mexican Zinger Pro Burger",
+      "category": "Non veg",
+      "price": "₹219.05",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K696.jpg?ver=48.85",
+      "desc": "New Zinger Pro burger with 1 Hot & Crispy chicken & Pepsi 475ml at a deal price"
+    },
+    {
+      "id": "6",
+      "title": "Mexican Zinger Pro Burger & Chicken Meal",
+      "category": "Non veg",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002416.jpg?ver=48.85",
+      "price": "₹399.05",
+      "desc": "New Zinger Pro burger with 1 Hot & Crispy chicken & Pepsi 475ml at a deal price"
+    },
+    {
+      "id": "7",
+      "title": "Caribbean Spicy Zinger Burger",
+      "category": "Non veg",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K815.jpg?ver=48.85",
+      "price": "₹219.05",
+      "desc": "Relish the Caribbean spicy zinger"
+    },
+    {
+      "id": "8",
+      "title": "Mexican Zinger Pro Burger",
+      "category": "Non veg",
+      "price": "₹219.05",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K696.jpg?ver=48.85",
+      "desc": "New Zinger Pro burger with 1 Hot & Crispy chicken & Pepsi 475ml at a deal price"
+    },
+    {
+      "id": "9",
+      "title": "Mexican Zinger Pro Burger & Chicken Meal",
+      "category": "Non veg",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002416.jpg?ver=48.85",
+      "price": "₹399.05",
+      "desc": "New Zinger Pro burger with 1 Hot & Crispy chicken & Pepsi 475ml at a deal price"
+    },
+    {
+      "id": "10",
+      "title": "Caribbean Spicy Zinger Burger",
+      "category": "Non veg",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K815.jpg?ver=48.85",
+      "price": "₹219.05",
+      "desc": "Relish the Caribbean spicy zinger"
+    },
+    {
+      "id": "11",
+      "title": "Mexican Zinger Pro Burger",
+      "category": "Non veg",
+      "price": "₹219.05",
+      "img": "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K696.jpg?ver=48.85",
+      "desc": "New Zinger Pro burger with 1 Hot & Crispy chicken & Pepsi 475ml at a deal price"
+    }
+  ]
+}
