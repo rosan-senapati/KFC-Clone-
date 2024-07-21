@@ -11,4 +11,10 @@ step-3:npm run dev
 
 (For Adding Context Please Create a Context folder inside src folder)
 
+<h5>IMPORTANT</h5>
+1.npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+2.npm install react-slick
+3.npm install react-infinite-scroll-component
+4.npm i react-icons
+
 
