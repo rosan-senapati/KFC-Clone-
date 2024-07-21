@@ -22,14 +22,13 @@ import {
 } from "@chakra-ui/react";
 import { LiaCartPlusSolid } from "react-icons/lia";
 import "./cardstyle.css";
-import { FaThumbsUp } from "react-icons/fa";
 
-const Card1 = () => {
+const CardType2 = () => {
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   async function getData() {
-    let res = await fetch("http://localhost:3000/internationalBurgerFest");
+    let res = await fetch("http://localhost:3000/products");
     let data = await res.json();
     setData(data);
   }
@@ -76,10 +75,19 @@ const Card1 = () => {
     getCartData();
   }, [cart]);
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", marginLeft: "4rem" }}>
-      {data.map((e) => (
+    <div
+    style={{
+      display: "flex",
+      flexWrap: "wrap",
+      marginLeft: "4rem",
+      backgroundColor: "white",
+      width: "65vw",
+    }}
+    >
+      {
+      data.map((e) => (
         <Card maxW="sm">
-          <CardBody style={{ backgroundColor: "#fff" }}>
+          <CardBody style={{ backgroundColor: "white", width: "18rem" }}>
             <Image src={e.img} borderRadius="lg" />
             <Stack mt="6" spacing="3">
               <Heading size="md">{e.title}</Heading>
@@ -129,7 +137,7 @@ const Card1 = () => {
           </CardFooter>
         </Card>
       ))}
-      <Modal isOpen={isOpen} onClose={onClose}>
+       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>SuccesFully Added to Cart</ModalHeader>
@@ -148,4 +156,4 @@ const Card1 = () => {
   );
 };
 
-export default Card1;
+export default CardType2;

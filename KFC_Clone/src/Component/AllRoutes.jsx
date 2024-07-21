@@ -5,6 +5,7 @@ import MenuPage from '../Pages/MenuPage'
 import DealsPage from '../Pages/DealsPage'
 import LoginPage from '../Pages/LoginPage'
 import SigninPage from '../Pages/SigninPage'
+import CartPage from '../Pages/CartPage'
 
 const AllRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AllRoutes = () => {
     <Route path='/deals'n element={<DealsPage/>}></Route>
     <Route path='/login' element={<LoginPage/>}></Route>
     <Route path='/signin' element={<SigninPage/>}></Route>
+    <Route path='/cart' element={<CartPage/>}></Route>
     </Routes>
   )
 }

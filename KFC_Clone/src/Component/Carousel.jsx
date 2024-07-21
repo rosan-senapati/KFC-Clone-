@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./Carousal.css";
 import { Button } from "@chakra-ui/react";
+import { Link as RouteLink } from "react-router-dom";
 
 const Carousel = () => {
   var settings = {
@@ -120,7 +121,7 @@ const Carousel = () => {
 
             }}>
                 <a href="" style={{textDecoration:"underline",fontFamily: "Arial",
-                fontWeight: "600"}}>View Details</a> <button id="applyOfferbtn">Apply Offer</button>
+                fontWeight: "600"}}>View Details</a> <RouteLink to="/deals"><button id="applyOfferbtn">Apply Offer</button></RouteLink>
             </div>
           </div>
         ))}

@@ -9,11 +9,8 @@
 #contentDiv{
     /* border:1px solid black; */
     height: 150vh;
-    width: 80rem;
+    width: 80vw;
 }
-
-.content{
-    /* border: 5px solid green; */
-    height: 350%;
-    width: 70rem;
+#content{
+    width: 90rem;
 }

@@ -1,6 +1,7 @@
 import { AbsoluteCenter, border, Box, Divider, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Carousel from "../Component/Carousel";
+import { Link as RouteLink } from "react-router-dom";
 
 
 const HomePage = () => {
@@ -22,6 +23,7 @@ const HomePage = () => {
           LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN
         </div>
         <div id="button-home">
+          <RouteLink to="/cart">
           <button
             style={{
               color: "white",
@@ -34,6 +36,7 @@ const HomePage = () => {
           >
             Start Order
           </button>
+          </RouteLink>
         </div>
       </div>
       <div
@@ -87,6 +90,7 @@ const HomePage = () => {
             alignItems: "center",
           }}
         >
+          <RouteLink to="/menu">
           <div
             className="cat"
             style={{
@@ -129,6 +133,8 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </RouteLink>
+          <RouteLink to="/menu">
           <div
             className="cat"
             style={{
@@ -171,6 +177,8 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </RouteLink>
+          <RouteLink to="/menu">
           <div
             className="cat"
             style={{
@@ -213,6 +221,8 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </RouteLink>
+          <RouteLink to="/menu">
           <div
             className="cat"
             style={{
@@ -255,6 +265,8 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </RouteLink>
+          <RouteLink to="/menu">
           <div
             className="cat"
             style={{
@@ -297,6 +309,8 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </RouteLink>
+          <RouteLink to="/menu">
           <div
             className="cat"
             style={{
@@ -339,6 +353,8 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </RouteLink>
+          <RouteLink to="/menu">
           <div
             className="cat"
             style={{
@@ -381,6 +397,8 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </RouteLink>
+          <RouteLink to='/menu'>
           <div
             className="cat"
             style={{
@@ -423,6 +441,7 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </RouteLink>
         </div>
       </div>
       <div
@@ -488,6 +507,7 @@ const HomePage = () => {
               EXCLUSIVE OFFERS FOR YOU
             </p>
           </div>
+          <RouteLink to="/deals">
           <div id="viewmore">
             <Text
               style={{
@@ -499,6 +519,7 @@ const HomePage = () => {
               View All Deals
             </Text>
           </div>
+          </RouteLink>
         </div>
         <Carousel/>
       </div>

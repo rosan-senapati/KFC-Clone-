@@ -21,22 +21,23 @@ import {
   FiSettings,
   FiMenu,
 } from 'react-icons/fi'
+import './sidebarstyle.css'
 
 
-const LinkItems = [
-  { name: 'INTERNATIONAL BURGER FEST' },
-  { name: 'MATCH DAY COMBOS' },
-  { name: 'VALUE LUNCH SPECIALS' },
-  { name: 'BOX MEALS'},
-  { name: 'BURGERS '},
-  { name: 'CHICKEN BUCKETS'},
-  { name: 'RICE BOWLZ'},
-  { name: 'VALUE SNACKERS'},
-  { name: 'VALUE SNACKERS'},
-  { name: 'CHICKEN ROLLS'},
-  { name: 'SNACKS'},
-  { name: 'BEVERAGES'},
-]
+// const LinkItems = [
+//   { name: 'INTERNATIONAL BURGER FEST' },
+//   { name: 'MATCH DAY COMBOS' },
+//   { name: 'VALUE LUNCH SPECIALS' },
+//   { name: 'BOX MEALS'},
+//   { name: 'BURGERS '},
+//   { name: 'CHICKEN BUCKETS'},
+//   { name: 'RICE BOWLZ'},
+//   { name: 'VALUE SNACKERS'},
+//   { name: 'VALUE SNACKERS'},
+//   { name: 'CHICKEN ROLLS'},
+//   { name: 'SNACKS'},
+//   { name: 'BEVERAGES'},
+// ]
 
 export default function Sidebar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -70,7 +71,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       borderRight="1px"
       borderRightColor={useColorModeValue('gray.200', 'gray.700')}
       w={{ base: 'full', md: 60 }}
-      pos="relative"
+      pos="sticky"
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
@@ -79,11 +80,22 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
+      {/* {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon}>
           {link.name}
         </NavItem>
-      ))}
+      ))} */}
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} } ><a href="#one">INTERNATIONAL BURGER FEST</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#two">MATCH DAY COMBOS</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#three">VALUE LUNCH SPECIALS</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#four">BOX MEALS</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#five">BURGERS</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#six">CHICKEN BUCKETS</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#seven">RICE BOWLZ</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#eight">VALUE SNACKERST</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#nine">CHICKEN ROLLS</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#ten">SNACKS</a></Text>
+      <Text style={{fontWeight:"500",fontFamily:"Arial",fontSize:"1.2rem", margin:"3rem 0"} }><a href="#eleven">BEVERAGES</a></Text>
     </Box>
   )
 }
@@ -137,10 +149,6 @@ const MobileNav = ({ onOpen, ...rest }) => {
         aria-label="open menu"
         icon={<FiMenu />}
       />
-
-      <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
-        Logo
-      </Text>
     </Flex>
   )
 }

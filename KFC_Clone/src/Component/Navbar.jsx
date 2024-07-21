@@ -72,10 +72,12 @@ export default function Navbar() {
             />
             <HStack spacing={8} alignItems={"center"}>
               <Box>
+                <RouteLink to='/'>
                 <img
                   src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg"
                   alt=""
                 />
+                </RouteLink>
               </Box>
               <HStack
                 as={"nav"}
@@ -98,15 +100,19 @@ export default function Navbar() {
                   alt=""
                   style={{ marginRight: "5%" }}
                 />
+                <RouteLink to="/login">
                 <Text
                   style={{
                     fontFamily: "Arial",
                     fontWeight: "700",
                     marginRight: "5%",
+                    width:"5rem"
                   }}
                 >
                   Sign in
                 </Text>
+                </RouteLink>
+                <RouteLink to="/cart">
                 <MenuButton
                   as={Button}
                   rounded={"full"}
@@ -114,6 +120,7 @@ export default function Navbar() {
                   cursor={"pointer"}
                   minW={0}
                 >
+                  
                   <Avatar
                     size={"sm"}
                     src={
@@ -121,12 +128,7 @@ export default function Navbar() {
                     }
                   />
                 </MenuButton>
-                <MenuList>
-                  <MenuItem>Link 1</MenuItem>
-                  <MenuItem>Link 2</MenuItem>
-                  <MenuDivider />
-                  <MenuItem>Link 3</MenuItem>
-                </MenuList>
+                  </RouteLink>
               </Menu>
             </Flex>
           </Flex>
