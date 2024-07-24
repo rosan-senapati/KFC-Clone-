@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Card,
   CardHeader,
@@ -22,11 +22,17 @@ import {
 } from "@chakra-ui/react";
 import { LiaCartPlusSolid } from "react-icons/lia";
 import "./cardstyle.css";
+import { AuthContext } from "../Context/AuthContext";
+import { DataContext } from "../Context/DataContext";
 
 const CardType2 = () => {
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
+  let { isLogin } = useContext(AuthContext);
+  const [message1, setMessage1] = useState("");
+  const [message2, setMessage2] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
+  let {incCounter}=useContext(DataContext);
   async function getData() {
     let res = await fetch("http://localhost:3000/products");
     let data = await res.json();
@@ -39,33 +45,42 @@ const CardType2 = () => {
   }
   function pushData(e) {
     let flag = false;
-    cart.forEach((el) => {
-      if (el.id == e.id) {
-        flag = true;
-        return;
-      } else {
-        flag = false;
+    if (isLogin) {
+      setMessage1("Successfully Added to Cart");
+      setMessage2("Enjoy Your Meal");
+      cart.forEach((el) => {
+        if (el.id == e.id) {
+          flag = true;
+          return;
+        } else {
+          flag = false;
+        }
+      });
+      if (flag == false) {
+        let obj = {
+          id: e.id,
+          img: e.img,
+          title: e.title,
+          desc: e.desc,
+          category: e.category,
+          price: e.price,
+        };
+        async function setData() {
+          let res = await fetch("http://localhost:3000/cart", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(obj),
+          });
+        }
+        setData();
+        incCounter();
+        onOpen();
       }
-    });
-    if (flag == false) {
-      let obj = {
-        id: e.id,
-        img: e.img,
-        title: e.title,
-        desc: e.desc,
-        category: e.category,
-        price: e.price,
-      };
-      async function setData() {
-        let res = await fetch("http://localhost:3000/cart", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(obj),
-        });
-      }
-      setData();
+    } else {
+      setMessage1("INFORMATION");
+      setMessage2("Please Log In First");
       onOpen();
     }
   }
@@ -73,21 +88,20 @@ const CardType2 = () => {
   useEffect(() => {
     getData();
     getCartData();
-  }, [cart]);
+  });
   return (
     <div
-    style={{
-      display: "flex",
-      flexWrap: "wrap",
-      marginLeft: "4rem",
-      backgroundColor: "white",
-      width: "65vw",
-    }}
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        marginLeft: "4rem",
+        backgroundColor: "white",
+        width: "65vw",
+      }}
     >
-      {
-      data.map((e) => (
+      {data.map((e) => (
         <Card maxW="sm">
-          <CardBody style={{ backgroundColor: "white", width: "18rem" }}>
+          <CardBody style={{ backgroundColor: "white", width: "17rem" }}>
             <Image src={e.img} borderRadius="lg" />
             <Stack mt="6" spacing="3">
               <Heading size="md">{e.title}</Heading>
@@ -102,7 +116,7 @@ const CardType2 = () => {
                 </Text>
               </div>
               <Text color="blue.600" fontSize="2xl">
-                {e.price}
+              ₹{e.price}
               </Text>
               <Text>{e.desc}</Text>
             </Stack>
@@ -137,13 +151,13 @@ const CardType2 = () => {
           </CardFooter>
         </Card>
       ))}
-       <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>SuccesFully Added to Cart</ModalHeader>
+          <ModalHeader>{message1}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Enjoy Your Meal</Text>
+            <Text>{message2}</Text>
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>

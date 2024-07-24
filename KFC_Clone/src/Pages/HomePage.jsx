@@ -1,7 +1,7 @@
 import { AbsoluteCenter, border, Box, Divider, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
 import Carousel from "../Component/Carousel";
 import { Link as RouteLink } from "react-router-dom";
+
 
 
 const HomePage = () => {

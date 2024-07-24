@@ -3,8 +3,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./Carousal.css";
-import { Button } from "@chakra-ui/react";
+import { Button, Divider, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
 import { Link as RouteLink } from "react-router-dom";
+import Modal_Home_1 from "./Modal_Home_1";
+import Modal_Home_2 from "./Modal_Home_2";
+
 
 const Carousel = () => {
   var settings = {
@@ -120,10 +123,17 @@ const Carousel = () => {
                 height:"6rem",
 
             }}>
-                <a href="" style={{textDecoration:"underline",fontFamily: "Arial",
-                fontWeight: "600"}}>View Details</a> <RouteLink to="/deals"><button id="applyOfferbtn">Apply Offer</button></RouteLink>
+              <Modal_Home_1 title={e.title} description={e.description}/>
+                {/* <a onClick={()=>{
+                  onOpen(e);
+                }} style={{textDecoration:"underline",fontFamily: "Arial",
+                fontWeight: "600"}}>View Details</a>  */}
+                {/* <RouteLink to="/deals"><button id="applyOfferbtn">Apply Offer</button></RouteLink> */}
+                <Modal_Home_2/>
             </div>
+            
           </div>
+          
         ))}
       </Slider>
     </div>

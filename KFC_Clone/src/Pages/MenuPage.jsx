@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Sidebar from "../Component/Sidebar";
 import "./menu.css";
 import { Text } from "@chakra-ui/react";
@@ -25,7 +25,7 @@ const MenuPage = () => {
         <div
           id="subHome"
           style={{
-            width: "100vw",
+            width: "98vw",
             height: "68px",
             backgroundColor: "black",
             display: "flex",
@@ -55,7 +55,7 @@ const MenuPage = () => {
           </div>
         </div>
 
-        <div id="sidebar-content" style={{ background: "white", border:"1px solid black",} }>
+        <div id="sidebar-content" style={{ background: "white"} }>
           <Sidebar />
           <InfiniteScroll dataLength={4} hasMore={true}  style={{overflowX:"hidden"}}>
           <div id="contentDiv" style={{width:"60vw"}}>

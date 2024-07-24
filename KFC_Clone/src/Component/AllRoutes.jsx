@@ -6,6 +6,7 @@ import DealsPage from '../Pages/DealsPage'
 import LoginPage from '../Pages/LoginPage'
 import SigninPage from '../Pages/SigninPage'
 import CartPage from '../Pages/CartPage'
+import PrivateRoute from './PrivateRoute'
 
 const AllRoutes = () => {
   return (
@@ -15,7 +16,7 @@ const AllRoutes = () => {
     <Route path='/deals'n element={<DealsPage/>}></Route>
     <Route path='/login' element={<LoginPage/>}></Route>
     <Route path='/signin' element={<SigninPage/>}></Route>
-    <Route path='/cart' element={<CartPage/>}></Route>
+    <Route path='/cart' element={<PrivateRoute><CartPage/></PrivateRoute>}></Route> 
     </Routes>
   )
 }

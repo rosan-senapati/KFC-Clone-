@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Card,
   CardHeader,
@@ -23,11 +23,19 @@ import {
 import { LiaCartPlusSolid } from "react-icons/lia";
 import "./cardstyle.css";
 import { FaThumbsUp } from "react-icons/fa";
+import { AuthContext } from "../Context/AuthContext";
+import { DataContext } from "../Context/DataContext";
 
 const Card1 = () => {
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  let {isLogin} = useContext(AuthContext);
+  const[message1,setMessage1]=useState("");
+  const[message2,setMessage2]=useState("");
+  let {incCounter}=useContext(DataContext);
+
+ 
   async function getData() {
     let res = await fetch("http://localhost:3000/internationalBurgerFest");
     let data = await res.json();
@@ -40,35 +48,46 @@ const Card1 = () => {
   }
   function pushData(e) {
     let flag = false;
-    cart.forEach((el) => {
-      if (el.id == e.id) {
-        flag = true;
-        return;
-      } else {
-        flag = false;
+    if(isLogin){
+      setMessage1("Successfully Added to Cart");
+      setMessage2("Enjoy Your Meal");
+      cart.forEach((el) => {
+        if (el.id === e.id) {
+          flag = true;   
+        }
+      });
+      console.log(flag);
+      if (flag == false) {
+        let obj = {
+          id: e.id,
+          img: e.img,
+          title: e.title,
+          desc: e.desc,
+          category: e.category,
+          price: e.price,
+        };
+        async function setData() {
+          let res = await fetch("http://localhost:3000/cart", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(obj),
+          });
+        }
+        setData();
+        incCounter();
+        onOpen();
       }
-    });
-    if (flag == false) {
-      let obj = {
-        id: e.id,
-        img: e.img,
-        title: e.title,
-        desc: e.desc,
-        category: e.category,
-        price: e.price,
-      };
-      async function setData() {
-        let res = await fetch("http://localhost:3000/cart", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(obj),
-        });
-      }
-      setData();
-      onOpen();
+     
     }
+    else{
+      setMessage1("INFORMATION");
+      setMessage2("Please Log In First");
+      onOpen();
+      
+    }
+   
   }
 
   useEffect(() => {
@@ -94,10 +113,10 @@ const Card1 = () => {
                 </Text>
               </div>
               <Text color="blue.600" fontSize="2xl">
-                {e.price}
+              ₹{e.price}
               </Text>
               <Text>{e.desc}</Text>
-            </Stack>
+            </Stack>  
           </CardBody>
           {/* <Divider /> */}
           <CardFooter
@@ -129,13 +148,13 @@ const Card1 = () => {
           </CardFooter>
         </Card>
       ))}
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>SuccesFully Added to Cart</ModalHeader>
+          <ModalHeader>{message1}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Enjoy Your Meal</Text>
+            <Text>{message2}</Text>
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
