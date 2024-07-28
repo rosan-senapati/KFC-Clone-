@@ -1,6 +1,7 @@
 import { AbsoluteCenter, border, Box, Divider, Text } from "@chakra-ui/react";
 import Carousel from "../Component/Carousel";
 import { Link as RouteLink } from "react-router-dom";
+import './homePage.css'
 
 
 
@@ -10,7 +11,7 @@ const HomePage = () => {
       <div
         id="subHome"
         style={{
-          width: "100vw",
+          width: "100%",
           height: "68px",
           backgroundColor: "black",
           display: "flex",
@@ -71,24 +72,24 @@ const HomePage = () => {
       </div>
       <div
         id="categoryDiv"
-        style={{
-          width: "100vw",
-          height: "55rem",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        // style={{
+        //   width: "100vw",
+        //   height: "55rem",
+        //   display: "flex",
+        //   justifyContent: "center",
+        //   alignItems: "center", 
+        // }}
       >
         <div
           id="category"
-          style={{
-            height: "50rem",
-            width: "90vw",
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-          }}
+          // style={{
+          //   height: "50rem",
+          //   width: "90vw",
+          //   display: "flex",
+          //   flexWrap: "wrap",
+          //   justifyContent: "space-evenly",
+          //   alignItems: "center",
+          // }}
         >
           <RouteLink to="/menu">
           <div

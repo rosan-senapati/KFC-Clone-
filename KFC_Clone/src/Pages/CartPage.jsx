@@ -4,6 +4,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import "./cartPage.css";
 import { Button } from "@chakra-ui/react";
 import { DataContext } from "../Context/DataContext";
+import ModalCart from "../Component/ModalCart";
 const CartPage = () => {
   const [cart, setCart] = useState([]);
   let { price } = useContext(DataContext);
@@ -39,7 +40,8 @@ const CartPage = () => {
           </div>
         </div>
       </InfiniteScroll>
-      <Button onClick={totalPrice}>Calculate</Button>
+      {/* <Button onClick={totalPrice}>Calculate</Button> */}
+      <div id="order-btn"><ModalCart/></div>
     </>
   );
 };

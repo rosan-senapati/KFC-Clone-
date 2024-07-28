@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Sidebar from "../Component/Sidebar";
 import "./menu.css";
 import { Text } from "@chakra-ui/react";
@@ -10,6 +10,7 @@ import { Link as RouteLink } from "react-router-dom";
 
 const MenuPage = () => {
   const [data, setData] = useState([]);
+  const one= useRef();
   async function getData() {
     let res = await fetch("http://localhost:3000/category");
     let data = await res.json();
@@ -25,7 +26,7 @@ const MenuPage = () => {
         <div
           id="subHome"
           style={{
-            width: "98vw",
+            width: "100%",
             height: "68px",
             backgroundColor: "black",
             display: "flex",
@@ -258,9 +259,9 @@ const MenuPage = () => {
               <CardType2 />
             </div>
           </div>
+      <GoToTop/>
             </InfiniteScroll>
         </div>
-      <GoToTop />
     </div>
   );
 };

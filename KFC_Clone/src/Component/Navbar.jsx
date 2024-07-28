@@ -17,6 +17,8 @@ import {
   useColorModeValue,
   Stack,
   Divider,
+  calc,
+  flexbox,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link as RouteLink } from "react-router-dom";
@@ -51,19 +53,20 @@ const NavLink = (props) => {
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  let {counter} = useContext(DataContext);
-  let {userName}=useContext(AuthContext);
+  let { counter } = useContext(DataContext);
+  let { userName } = useContext(AuthContext);
   return (
     <>
       <Box
         bg={useColorModeValue("white.100", "white.900")}
-        px={4}
-        style={{ paddingLeft: "15%" }}
+        px={5}
+        style={{ width: "100%"}}
+        id="nav-box"
       >
         <Flex
           h={16}
           alignItems={"center"}
-          justifyContent={"space-between"}
+          justifyContent={"space-evenly"}
           style={{ height: "20vh" }}
         >
           <IconButton
@@ -99,21 +102,32 @@ export default function Navbar() {
               </RouteLink>
             </HStack>
           </HStack>
-          <Flex alignItems={"center"} style={{ width: "28%" }}>
+          <Flex alignItems={"center"} style={{ width: "20vw",marginLeft:"35%" }}justifyContent={"space-around"}>
             <Menu>
-              <Text style={{
-                    fontFamily: "Arial",
-                    fontWeight: "700",
-                    marginRight: "5%",
-                    width: "5rem",
-                    color:"red"
-                  }} display={"flex"} flexWrap={"wrap"}> <img
+              <div style={{display:"flex"}}>
+              {
+                userName ? <Text
+                style={{
+                  fontFamily: "Arial",
+                  fontWeight: "700",
+                  marginRight: "5%",
+                  width: "50%",
+                  color: "red",
+                }}
+                display={"flex"}
+                flexWrap={"wrap"}
+              >
+              {userName}
+              </Text> : <img
                   src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg"
                   alt=""
                   style={{ marginRight: "5%" }}
-                />{userName}</Text>
-                  
-                  
+                />
+              }
+                
+                
+             
+
               <RouteLink to="/login">
                 <Text
                   style={{
@@ -122,29 +136,38 @@ export default function Navbar() {
                     marginRight: "5%",
                     width: "5rem",
                   }}
-                >
+                 id="sign-in">
                   Sign in
                 </Text>
+               
               </RouteLink>
+              </div>
               <RouteLink to="/cart">
-                <MenuButton
+                {/* <MenuButton
                   as={Button}
                   rounded={"full"}
                   variant={"link"}
                   cursor={"pointer"}
                   minW={0}
-                >
-                  <div display={"flex"}>
-
-                  <Text position={"absolute"} marginLeft={"20px"} zIndex={"1"} color={"black"} marginTop={"14px"}>{counter}</Text>
-                  <Avatar
-                    size={"md"}
-                    src={
-                      "https://images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"
-                    }
+                > */}
+                  <div display={"flex"} >
+                    <Text
+                      position={"absolute"}
+                      marginLeft={"20px"}
+                      zIndex={"1"}
+                      color={"black"}
+                      marginTop={"14px"}
+                    >
+                      {counter}
+                    </Text>
+                    <Avatar
+                      size={"md"}
+                      src={
+                        "https://images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"
+                      }
                     />
-                    </div>
-                </MenuButton>
+                  </div>
+                {/* </MenuButton> */}
               </RouteLink>
             </Menu>
           </Flex>

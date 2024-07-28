@@ -17,12 +17,11 @@ export default function CartCard(e) {
   const [counter, setCounter] = useState(1);
   let { decCounter } = useContext(DataContext);
   let { assignPrice, decPrice, incPrice } = useContext(DataContext);
-  async function deleteData(e,id,x) {
+  async function deleteData(id) {
     let res = await fetch(`http://localhost:3000/cart/${id}`, {
       method: "DELETE",
     });
     decCounter();
-    decPrice(e.price*x);
   }
 
 
@@ -110,7 +109,7 @@ export default function CartCard(e) {
             <Button
               onClick={() => {
                 let x = counter;
-                deleteData(e,e.id,x);
+                deleteData(e.id);
               }}
             >
               Delete
